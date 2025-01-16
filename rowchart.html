@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Row Chart</title>
+    <link rel="stylesheet" href="./rowchart.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Dynamic Row Chart</h1>
+        <form id="rowChartForm">
+            <div id="categories"></div>
+            <button type="button" id="addCategory" class="btn btn-secondary">Add Category</button>
+            <button type="submit" class="btn btn-primary">Generate Chart</button>
+        </form>
+    </div>
+
+    <div class="chart-container">
+        <canvas id="rowChart"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./rowchart.js"></script>
+</body>
+</html>

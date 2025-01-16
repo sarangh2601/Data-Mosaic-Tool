@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Pie Chart</title>
+    <link rel="stylesheet" href="./piechart.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Dynamic Pie Chart</h1>
+        <form id="pieChartForm">
+            <div id="dataPoints"></div>
+            <button type="button" id="addDataPoint" class="btn btn-secondary">Add Data Point</button>
+            <button type="submit" class="btn btn-primary">Generate Chart</button>
+        </form>
+    </div>
+
+    <div class="chart-container">
+        <canvas id="pieChart"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="piechart.js"></script>
+</body>
+</html>

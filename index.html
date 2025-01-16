@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DataMosaic - Data Visualization Platform</title>
+    <style>
+      /* Minimal and attractive CSS */
+      :root {
+        --primary: #3498db;
+        --secondary: #2c3e50;
+        --background: #f8f9fa;
+        --text: #333;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        line-height: 1.6;
+        color: var(--text);
+        background-color: var(--background);
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Navigation */
+      .nav-bar {
+        background-color: rgb(244, 241, 241);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        /* position: sticky; */
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* padding: 1rem 0; */
+        padding-top: 10px;
+      }
+
+      .logo img {
+        max-width: 250px;
+        height: auto;
+      }
+
+      .nav-ul {
+        display: flex;
+        list-style: none;
+      }
+
+      .nav-li {
+        margin-left: 4rem;
+      }
+
+      .nav-li a {
+        text-decoration: none;
+        color: var(--secondary);
+        font-weight: 600;
+        font-size: 18px;
+        transition: color 0.3s ease;
+      }
+
+      .nav-li a:hover {
+        color: rgb(129, 192, 35);
+      }
+
+      /* Banner */
+      .banner {
+        color: white;
+        padding: 4rem 0;
+        height: 670px;
+        background-image: url(./banner.jpg);
+        background-repeat: no-repeat;
+        background-position: center; /* Center the image */
+      }
+
+      .banner h1 {
+        padding-top: 28px;
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        text-align: left;
+        text-shadow: #d9cccc;
+        text-shadow: 2px 2px black;
+      }
+
+      .banner p {
+        font-size: 1.2rem;
+        margin: 0 auto;
+        margin-left: 100px;
+      }
+
+      /* Visualization section */
+      .visualization {
+        padding: 4rem 0;
+      }
+
+      .visualization h2 {
+        text-align: center;
+        color: var(--secondary);
+        font-size: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .visu-1 {
+        display: flex;
+        padding: 1rem;
+
+        /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
+      }
+      .visu-2 {
+        display: flex;
+        padding: 1rem;
+      }
+      .visu-item {
+        text-align: center;
+        transition: transform 0.3s ease;
+        padding: 0px 10px 0px 10px;
+      }
+
+      .visu-item:hover {
+        transform: translateY(-5px);
+      }
+
+      .visu-item img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .visu-item a {
+        display: block;
+        text-decoration: none;
+        color: var(--text);
+        font-weight: 500;
+        margin-top: 1rem;
+      }
+
+      /* About section */
+      .about-section {
+        background-color: var(--secondary);
+        color: #fff;
+        padding: 4rem 0;
+      }
+
+      .about-content {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .about-content h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .about-content p {
+        margin-bottom: 1rem;
+      }
+
+      /* Footer */
+      footer {
+        background-color: #fff;
+        color: var(--text);
+        padding: 2rem 0;
+        border-top: 1px solid #eee;
+      }
+
+      .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .footer-section {
+        flex-basis: calc(33.333% - 2rem);
+        margin-bottom: 2rem;
+      }
+
+      .footer-section h3 {
+        color: var(--primary);
+        margin-bottom: 1rem;
+      }
+
+      .footer-section ul {
+        list-style: none;
+      }
+
+      .footer-section ul li {
+        margin-bottom: 0.5rem;
+      }
+
+      .footer-section a {
+        color: var(--text);
+        text-decoration: none;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        margin-top: 2rem;
+        padding-top: 1rem;
+        border-top: 1px solid #eee;
+      }
+
+      /* Responsive design */
+      @media (max-width: 768px) {
+        .nav-ul {
+          display: none;
+        }
+
+        .footer-section {
+          flex-basis: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav-bar">
+      <div class="container nav-container">
+        <div class="logo">
+          <a href="#"><img src="./logo.png" alt="DataMosaic Logo" /></a>
+        </div>
+        <ul class="nav-ul">
+          <li class="nav-li"><a href="#">Home</a></li>
+          <li class="nav-li"><a href="#about">About</a></li>
+          <li class="nav-li"><a href="#visualization">Visualization</a></li>
+          <li class="nav-li"><a href="#help">Help</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="banner">
+      <div class="container">
+        <div class="bg-image"></div>
+        <div class="bg-text">
+          <h1>Turn Data into Stunning Visuals</h1>
+          <p>Create stunning charts and graphs with our intuitive platform</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="visualization" id="visualization">
+      <div class="container">
+        <h2>Visualization Types</h2>
+        <div class="visu">
+          <div class="visu-1">
+            <div class="visu-item">
+              <a href="./piechart.html">
+                <img src="./piechart.png" alt="Pie Chart" />
+                <span>Pie Chart</span>
+              </a>
+            </div>
+            <div class="visu-item">
+              <a href="./linechart.html">
+                <img src="./line chart.png" alt="Line Chart" />
+                <span>Line Chart</span>
+              </a>
+            </div>
+            <div class="visu-item">
+              <a href="./barchart.html">
+                <img src="./bar chart.png" alt="Bar Graph" />
+                <span>Bar Graph</span>
+              </a>
+            </div>
+          </div>
+          <div class="visu-2">
+            <div class="visu-item">
+              <a href="./donutchart.html">
+                <img src="./donut.png" alt="Donut Chart" />
+                <span>Donut Chart</span>
+              </a>
+            </div>
+            <div class="visu-item">
+              <a href="./stackbar.html">
+                <img src="./stackbar.png" alt="Stack Bar" />
+                <span>Stack Bar</span>
+              </a>
+            </div>
+            <div class="visu-item">
+              <a href="./rowchart.html">
+                <img src="./row chart.png" alt="Row Chart" />
+                <span>Row Chart</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-section" id="about">
+      <div class="container">
+        <div class="about-content">
+          <h2>About DataMosaic</h2>
+          <p>
+            DataMosaic is an innovative visualization tool designed to transform
+            complex datasets into clear, interactive visual insights. Whether
+            you are dealing with business analytics, research data, or
+            educational content, our platform helps users create compelling
+            charts and graphs with ease.
+          </p>
+          <p>
+            Our mission is to empower individuals and organizations to harness
+            the power of data through intuitive and customizable visualizations.
+            From pie charts to complex bar and line graphs, DataMosaic makes
+            data storytelling engaging and accessible to everyone.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container footer-container">
+        <div class="footer-section">
+          <h3>About Us</h3>
+          <p>
+            DataMosaic: Transforming data into visual stories. Empowering
+            decisions through intuitive charts and graphs.
+          </p>
+        </div>
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <ul>
+            <li>Email: contact@datamosaic.com</li>
+            <li>Phone: +918459186163</li>
+            <li>Nagpur, India</li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <p>&copy; 2024 DataMosaic. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
